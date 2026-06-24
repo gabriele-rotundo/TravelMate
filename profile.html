@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="User profile page for TravelMate travel planner web application.">
+  <meta name="keywords" content="travel planner, user profile, JavaScript, localStorage">
+  <meta name="author" content="Gabriele Rotundo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TravelMate | Profile</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/profile.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="TravelMate logo" class="logo-img">
+        <span>TravelMate</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="index.html#how-it-works">How it works</a>
+
+        <div class="auth-links" id="authLinks">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="profile-main" id="profileMain">
+    <section class="profile-header-card">
+  <div class="profile-header-left">
+    <div class="profile-avatar" id="profileAvatar">
+      U
+    </div>
+
+    <div class="profile-header-content">
+      <p class="eyebrow">Personal area</p>
+      <h1 id="profileUsername">Username</h1>
+      <p>
+        Manage your TravelMate profile and your saved travel information.
+      </p>
+    </div>
+  </div>
+
+  <div class="profile-header-info">
+    <h2>Account information</h2>
+
+    <div class="profile-info-row">
+      <span>Username</span>
+      <strong id="accountUsername">Username</strong>
+    </div>
+
+    <div class="profile-info-row">
+      <span>Login time</span>
+      <strong id="accountLoginTime">Not available</strong>
+    </div>
+
+    <div class="profile-info-row">
+      <span>Favourite destination</span>
+      <strong id="accountFavouriteDestination">Not selected</strong>
+    </div>
+  </div>
+</section>
+
+    <section class="profile-card profile-dashboard-card">
+  <div class="section-heading left-heading">
+    <p class="eyebrow">Personal dashboard</p>
+    <h2>Your saved travel data</h2>
+    <p>
+      Here you can quickly view your saved destinations, planned trips and booking requests.
+    </p>
+  </div>
+
+  <div class="profile-dashboard-grid">
+    <div class="profile-dashboard-column">
+      <div class="dashboard-column-header">
+        <h3>Saved destinations</h3>
+        <a href="destinations.html">Add more</a>
+      </div>
+
+      <div class="profile-data-list" id="profileSavedDestinationsList">
+      </div>
+    </div>
+
+    <div class="profile-dashboard-column">
+      <div class="dashboard-column-header">
+        <h3>Planned trips</h3>
+        <a href="itinerary.html">Manage trips</a>
+      </div>
+
+      <div class="profile-data-list" id="profilePlannedTripsList">
+      </div>
+    </div>
+
+    <div class="profile-dashboard-column">
+      <div class="dashboard-column-header">
+        <h3>Bookings</h3>
+        <a href="booking.html">Create booking</a>
+      </div>
+
+      <div class="profile-data-list" id="profileBookingsList">
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="profile-card profile-form-card">
+      <div class="section-heading left-heading">
+        <p class="eyebrow">Edit profile</p>
+        <h2>Update your travel preferences</h2>
+        <p>
+          This form simulates saving user profile data using localStorage.
+        </p>
+      </div>
+
+      <form id="profileForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input 
+            type="text" 
+            id="fullName" 
+            name="fullName" 
+            placeholder="Enter your full name"
+          >
+          <small class="error-message" id="fullNameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="favouriteDestination">Favourite destination</label>
+          <input 
+            type="text" 
+            id="favouriteDestination" 
+            name="favouriteDestination" 
+            placeholder="Example: Rome"
+          >
+          <small class="error-message" id="favouriteDestinationError"></small>
+        </div>
+
+        <button type="submit" class="btn primary-btn">
+          Save profile
+        </button>
+
+        <p class="form-message" id="profileMessage"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 TravelMate. Web development university project.</p>
+  </footer>
+</body>
+</html>

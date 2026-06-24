@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="Create a travel booking in the TravelMate web application.">
+  <meta name="keywords" content="travel booking, trip reservation, JavaScript form validation, localStorage">
+  <meta name="author" content="Gabriele Rotundo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TravelMate | Booking</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="TravelMate logo" class="logo-img">
+        <span>TravelMate</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="index.html#how-it-works">How it works</a>
+
+        <div class="auth-links" id="authLinks">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="booking-main" id="bookingMain">
+    <section class="page-header">
+      <p class="eyebrow">Book your trip</p>
+      <h1>Travel booking</h1>
+      <p>
+        Create a simple booking request for your next destination. This is a simulated booking system for the TravelMate project.
+      </p>
+    </section>
+
+    <section class="booking-grid">
+      <div class="profile-card booking-form-card">
+        <div class="section-heading left-heading">
+          <p class="eyebrow">Booking form</p>
+          <h2>Create booking</h2>
+          <p>
+            Fill in your travel details and save your booking locally.
+          </p>
+        </div>
+
+        <form id="bookingForm" novalidate>
+          <div class="form-group">
+            <label for="bookingDestination">Destination</label>
+            <input 
+              type="text" 
+              id="bookingDestination" 
+              name="bookingDestination" 
+              placeholder="Example: Rome, Paris, Tokyo"
+            >
+            <small class="error-message" id="bookingDestinationError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="travelerName">Traveler name</label>
+            <input 
+              type="text" 
+              id="travelerName" 
+              name="travelerName" 
+              placeholder="Example: Gabriele Rotundo"
+            >
+            <small class="error-message" id="travelerNameError"></small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="travelersNumber">Travelers</label>
+              <input 
+                type="number" 
+                id="travelersNumber" 
+                name="travelersNumber" 
+                min="1" 
+                max="10" 
+                placeholder="2"
+              >
+              <small class="error-message" id="travelersNumberError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="durationDays">Duration</label>
+              <input 
+                type="number" 
+                id="durationDays" 
+                name="durationDays" 
+                min="1" 
+                max="60" 
+                placeholder="5"
+              >
+              <small class="error-message" id="durationDaysError"></small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="departureDate">Departure date</label>
+              <input type="date" id="departureDate" name="departureDate">
+              <small class="error-message" id="departureDateError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="travelBudget">Budget (€)</label>
+              <input 
+                type="number" 
+                id="travelBudget" 
+                name="travelBudget" 
+                min="100" 
+                placeholder="1200"
+              >
+              <small class="error-message" id="travelBudgetError"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tripType">Trip type</label>
+            <select id="tripType" name="tripType">
+              <option value="">Select trip type</option>
+              <option value="Cultural trip">Cultural trip</option>
+              <option value="Relaxing holiday">Relaxing holiday</option>
+              <option value="Adventure trip">Adventure trip</option>
+              <option value="Food experience">Food experience</option>
+              <option value="Business trip">Business trip</option>
+            </select>
+            <small class="error-message" id="tripTypeError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="specialRequests">Special requests</label>
+            <textarea 
+              id="specialRequests" 
+              name="specialRequests" 
+              placeholder="Example: hotel near the city center, vegetarian food, airport transfer..."
+            ></textarea>
+            <small class="error-message" id="specialRequestsError"></small>
+          </div>
+
+          <button type="submit" class="btn primary-btn full-width-btn">
+            Save booking
+          </button>
+
+          <p class="form-message" id="bookingFormMessage"></p>
+        </form>
+      </div>
+
+      <aside class="profile-card booking-summary-card">
+        <div class="section-heading left-heading">
+          <p class="eyebrow">Live preview</p>
+          <h2>Booking summary</h2>
+          <p>
+            This preview updates while you complete the form.
+          </p>
+        </div>
+
+        <div class="booking-preview" id="bookingPreview">
+          <div class="booking-preview-icon">
+            ✈️
+          </div>
+
+          <h3>No booking yet</h3>
+          <p>
+            Complete the form to preview your travel booking.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="profile-card bookings-list-card">
+      <div class="section-heading left-heading">
+        <p class="eyebrow">Saved bookings</p>
+        <h2>Your booking requests</h2>
+        <p>
+          These bookings are stored in localStorage.
+        </p>
+      </div>
+
+      <div class="bookings-list" id="bookingsList">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 TravelMate. Web development university project.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>TravelMate Logo</title>
+
+  <circle cx="32" cy="32" r="30" fill="#2563eb"/>
+
+  <path 
+    d="M32 14C24.8 14 19 19.8 19 27C19 38 32 50 32 50C32 50 45 38 45 27C45 19.8 39.2 14 32 14Z" 
+    fill="#ffffff"
+  />
+
+  <circle cx="32" cy="27" r="5" fill="#2563eb"/>
+
+  <path 
+    d="M18 39L46 22L41 37L34 34L28 46L26 35L18 39Z" 
+    fill="#93c5fd"
+    opacity="0.95"
+  />
+</svg>
