@@ -127,17 +127,27 @@ function loadProfileSavedDestinations() {
       : `<span class="profile-data-emoji">${destination.flagEmoji || "🌍"}</span>`;
 
     item.innerHTML = `
-      <div class="profile-data-icon">
-        ${flagContent}
-      </div>
+  <div class="profile-data-icon">
+    ${flagContent}
+  </div>
 
-      <div>
-        <h4>${destination.name}</h4>
-        <p>${destination.country || "Saved destination"}</p>
-      </div>
-    `;
+  <div class="profile-data-content">
+    <h4>${destination.name}</h4>
+    <p>${destination.country || "Saved destination"}</p>
+  </div>
 
-    profileSavedDestinationsList.appendChild(item);
+  <button class="profile-remove-btn" aria-label="Remove saved destination">
+    Remove
+  </button>
+`;
+
+const removeButton = item.querySelector(".profile-remove-btn");
+
+removeButton.addEventListener("click", function () {
+  removeProfileSavedDestination(destination.id);
+});
+
+profileSavedDestinationsList.appendChild(item);
   });
 
   if (savedDestinations.length > 3) {
@@ -231,6 +241,22 @@ function loadProfileBookings() {
       </a>
     `;
   }
+}
+
+function removeProfileSavedDestination(destinationId) {
+  const savedDestinations =
+    JSON.parse(localStorage.getItem("travelMateSavedDestinations")) || [];
+
+  const updatedDestinations = savedDestinations.filter(function (destination) {
+    return destination.id !== destinationId;
+  });
+
+  localStorage.setItem(
+    "travelMateSavedDestinations",
+    JSON.stringify(updatedDestinations)
+  );
+
+  loadProfileSavedDestinations();
 }
 
 function formatProfileDate(dateString) {

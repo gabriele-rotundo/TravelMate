@@ -881,6 +881,26 @@ a {
   background-color: #bfdbfe;
 }
 
+.profile-data-content {
+  flex: 1;
+}
+
+.profile-remove-btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 7px 10px;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.profile-remove-btn:hover {
+  background-color: #fecaca;
+}
+
 /* Edit profile form */
 
 .profile-grid {
