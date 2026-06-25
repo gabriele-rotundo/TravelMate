@@ -170,9 +170,7 @@ function createDestinationCard(destination) {
         </p>
       </div>
 
-      <div class="weather-box hidden">
-        <!-- Weather data will be inserted here -->
-      </div>
+      <div class="weather-box hidden"></div>
 
       <div class="destination-actions">
         <button class="btn secondary-btn full-width-btn weather-btn">

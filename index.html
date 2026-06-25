@@ -1,147 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
-  <meta name="description" content="TravelMate is a simple travel planner web application built with HTML, CSS and JavaScript.">
-  <meta name="keywords" content="travel planner, HTML, CSS, JavaScript, web application">
-  <meta name="author" content="Gabriele Rotundo">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="TravelMate is a simple travel planner web application built with HTML, CSS and JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="travel planner, HTML, CSS, JavaScript, web application"
+    />
+    <meta name="author" content="Gabriele Rotundo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>TravelMate | Home</title>
+    <title>TravelMate | Home</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-  <script src="js/home.js" defer></script>
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/home.js" defer></script>
+  </head>
 
-<body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-  <img src="assets/images/logo.svg" alt="TravelMate logo" class="logo-img">
-  <span>TravelMate</span>
-</a>
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo.svg"
+            alt="TravelMate logo"
+            class="logo-img"
+          />
+          <span>TravelMate</span>
+        </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-        ☰
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="#how-it-works">How it works</a>
-
-        <div class="auth-links" id="authLinks">
-        </div>
-      </div>
-    </nav>
-  </header>
-
- <main class="home-main">
-  <section class="hero-section">
-    <div class="hero-content">
-      <p class="eyebrow">Simple travel planning</p>
-
-      <h1>Plan your next trip with TravelMate.</h1>
-
-      <p class="hero-text">
-        Search destinations, discover useful travel information and save your favourite places in a personal itinerary.
-      </p>
-
-      <div class="hero-actions">
-        <a href="destinations.html" class="btn primary-btn">Explore destinations</a>
-        <a href="login.html" class="btn secondary-btn" id="homeLoginAction">
-  Login to save trips
-</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-  <div class="destination-slider">
-    <button class="slider-arrow left-arrow" id="prevDestination" aria-label="Previous destination">
-      ‹
-    </button>
-
-    <article class="slider-card" id="destinationCard">
-      <div class="slider-image" id="destinationIcon">
-        🏛️
-      </div>
-
-      <div class="slider-content">
-        <p class="card-label">Featured destination</p>
-        <h2 id="destinationName">Rome, Italy</h2>
-        <p id="destinationDescription">
-          Culture, food, history and unforgettable walks through the city.
-        </p>
-
-        <button class="btn primary-btn full-width-btn" id="bookDestination">
-          Book this destination
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+        >
+          ☰
         </button>
-      </div>
-    </article>
 
-    <button class="slider-arrow right-arrow" id="nextDestination" aria-label="Next destination">
-      ›
-    </button>
-  </div>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="#how-it-works">How it works</a>
 
-  <div class="slider-dots" id="sliderDots">
-  </div>
-</div>
-  </section>
+          <div class="auth-links" id="authLinks"></div>
+        </div>
+      </nav>
+    </header>
 
-  <section class="features-section" id="how-it-works">
-    <div class="section-heading">
-      <p class="eyebrow">Features</p>
-      <h2>What you can do with TravelMate</h2>
-      <p>
-        A simple travel planner built with HTML, CSS and JavaScript.
-      </p>
-    </div>
+    <main class="home-main">
+      <section class="hero-section">
+        <div class="hero-content">
+          <p class="eyebrow">Simple travel planning</p>
 
-    <div class="features-grid">
-      <article class="feature-card">
-        <div class="feature-icon">🔎</div>
-        <h3>Search destinations</h3>
+          <h1>Plan your next trip with TravelMate.</h1>
+
+          <p class="hero-text">
+            Search destinations, discover useful travel information and save
+            your favourite places in a personal itinerary.
+          </p>
+
+          <div class="hero-actions">
+            <a href="destinations.html" class="btn primary-btn"
+              >Explore destinations</a
+            >
+            <a href="login.html" class="btn secondary-btn" id="homeLoginAction">
+              Login to save trips
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="destination-slider">
+            <button
+              class="slider-arrow left-arrow"
+              id="prevDestination"
+              aria-label="Previous destination"
+            >
+              ‹
+            </button>
+
+            <article class="slider-card" id="destinationCard">
+              <div class="slider-image" id="destinationIcon">🏛️</div>
+
+              <div class="slider-content">
+                <p class="card-label">Featured destination</p>
+                <h2 id="destinationName">Rome, Italy</h2>
+                <p id="destinationDescription">
+                  Culture, food, history and unforgettable walks through the
+                  city.
+                </p>
+
+                <button
+                  class="btn primary-btn full-width-btn"
+                  id="bookDestination"
+                >
+                  Book this destination
+                </button>
+              </div>
+            </article>
+
+            <button
+              class="slider-arrow right-arrow"
+              id="nextDestination"
+              aria-label="Next destination"
+            >
+              ›
+            </button>
+          </div>
+
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </section>
+
+      <section class="features-section" id="how-it-works">
+        <div class="section-heading">
+          <p class="eyebrow">Features</p>
+          <h2>What you can do with TravelMate</h2>
+          <p>A simple travel planner built with HTML, CSS and JavaScript.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Search destinations</h3>
+            <p>
+              Look for destinations and display travel information dynamically.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Save places</h3>
+            <p>Logged-in users can save favourite places in their itinerary.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Manage your trip</h3>
+            <p>Add, update and remove travel plans.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <div>
+          <p class="eyebrow">Discover a new world</p>
+          <h2>Explore first, login later.</h2>
+        </div>
+
         <p>
-          Look for destinations and display travel information dynamically.
+          Visitors can explore the app without logging in. Login is required
+          only to save destinations, manage a personal itinerary and access the
+          user profile.
         </p>
-      </article>
+      </section>
+    </main>
 
-      <article class="feature-card">
-        <div class="feature-icon">⭐</div>
-        <h3>Save places</h3>
-        <p>
-          Logged-in users can save favourite places in their itinerary.
-        </p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-icon">🗺️</div>
-        <h3>Manage your trip</h3>
-        <p>
-          Add, update and remove travel plans.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="info-section">
-    <div>
-      <p class="eyebrow">Discover a new world</p>
-      <h2>Explore first, login later.</h2>
-    </div>
-
-    <p>
-      Visitors can explore the app without logging in. Login is required only to save destinations,
-      manage a personal itinerary and access the user profile.
-    </p>
-  </section>
-</main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 TravelMate. Web development university project.</p>
-  </footer>
-</body>
+    <footer class="site-footer">
+      <p>&copy; 2026 TravelMate. Web development university project.</p>
+    </footer>
+  </body>
 </html>

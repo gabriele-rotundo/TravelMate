@@ -4,20 +4,29 @@ const profileAvatar = document.getElementById("profileAvatar");
 const profileUsername = document.getElementById("profileUsername");
 const accountUsername = document.getElementById("accountUsername");
 const accountLoginTime = document.getElementById("accountLoginTime");
-const accountFavouriteDestination = document.getElementById("accountFavouriteDestination");
+const accountFavouriteDestination = document.getElementById(
+  "accountFavouriteDestination",
+);
 
 const profileForm = document.getElementById("profileForm");
 const fullNameInput = document.getElementById("fullName");
-const favouriteDestinationInput = document.getElementById("favouriteDestination");
+const favouriteDestinationInput = document.getElementById(
+  "favouriteDestination",
+);
 
 const fullNameError = document.getElementById("fullNameError");
-const favouriteDestinationError = document.getElementById("favouriteDestinationError");
+const favouriteDestinationError = document.getElementById(
+  "favouriteDestinationError",
+);
 const profileMessage = document.getElementById("profileMessage");
 
-const profileSavedDestinationsList = document.getElementById("profileSavedDestinationsList");
-const profilePlannedTripsList = document.getElementById("profilePlannedTripsList");
+const profileSavedDestinationsList = document.getElementById(
+  "profileSavedDestinationsList",
+);
+const profilePlannedTripsList = document.getElementById(
+  "profilePlannedTripsList",
+);
 const profileBookingsList = document.getElementById("profileBookingsList");
-
 
 const profileUser = JSON.parse(localStorage.getItem("travelMateUser"));
 
@@ -49,7 +58,8 @@ if (!profileUser) {
     }
 
     if (favouriteDestination === "") {
-      favouriteDestinationError.textContent = "Favourite destination is required";
+      favouriteDestinationError.textContent =
+        "Favourite destination is required";
       isValid = false;
     }
 
@@ -61,7 +71,7 @@ if (!profileUser) {
 
     const profileData = {
       fullName: fullName,
-      favouriteDestination: favouriteDestination
+      favouriteDestination: favouriteDestination,
     };
 
     localStorage.setItem("travelMateProfile", JSON.stringify(profileData));
@@ -141,13 +151,13 @@ function loadProfileSavedDestinations() {
   </button>
 `;
 
-const removeButton = item.querySelector(".profile-remove-btn");
+    const removeButton = item.querySelector(".profile-remove-btn");
 
-removeButton.addEventListener("click", function () {
-  removeProfileSavedDestination(destination.id);
-});
+    removeButton.addEventListener("click", function () {
+      removeProfileSavedDestination(destination.id);
+    });
 
-profileSavedDestinationsList.appendChild(item);
+    profileSavedDestinationsList.appendChild(item);
   });
 
   if (savedDestinations.length > 3) {
@@ -202,8 +212,7 @@ function loadProfilePlannedTrips() {
 }
 
 function loadProfileBookings() {
-  const bookings =
-    JSON.parse(localStorage.getItem("travelMateBookings")) || [];
+  const bookings = JSON.parse(localStorage.getItem("travelMateBookings")) || [];
 
   profileBookingsList.innerHTML = "";
 
@@ -253,7 +262,7 @@ function removeProfileSavedDestination(destinationId) {
 
   localStorage.setItem(
     "travelMateSavedDestinations",
-    JSON.stringify(updatedDestinations)
+    JSON.stringify(updatedDestinations),
   );
 
   loadProfileSavedDestinations();
@@ -265,6 +274,6 @@ function formatProfileDate(dateString) {
   return date.toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 }

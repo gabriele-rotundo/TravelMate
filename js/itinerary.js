@@ -114,7 +114,7 @@ function removeSavedDestination(index) {
 
   localStorage.setItem(
     "travelMateSavedDestinations",
-    JSON.stringify(savedDestinations)
+    JSON.stringify(savedDestinations),
   );
 
   loadSavedDestinations();
@@ -174,7 +174,7 @@ function createTrip() {
     startDate: startDate,
     endDate: endDate,
     notes: tripNotes,
-    createdAt: new Date().toLocaleString()
+    createdAt: new Date().toLocaleString(),
   };
 
   const plannedTrips = getPlannedTrips();
@@ -302,6 +302,6 @@ function formatDate(dateString) {
   return date.toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 }

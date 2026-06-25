@@ -2,32 +2,37 @@ const destinations = [
   {
     name: "Rome, Italy",
     icon: "🏛️",
-    description: "Culture, food, history and unforgettable walks through the city.",
-    slug: "rome"
+    description:
+      "Culture, food, history and unforgettable walks through the city.",
+    slug: "rome",
   },
   {
     name: "Paris, France",
     icon: "🗼",
     description: "Romantic streets, museums, cafés and iconic monuments.",
-    slug: "paris"
+    slug: "paris",
   },
   {
     name: "Tokyo, Japan",
     icon: "🗻",
-    description: "Modern technology, temples, neon lights and unique food experiences.",
-    slug: "tokyo"
+    description:
+      "Modern technology, temples, neon lights and unique food experiences.",
+    slug: "tokyo",
   },
   {
     name: "Barcelona, Spain",
     icon: "🌊",
-    description: "Architecture, beaches, warm weather and Mediterranean culture.",
-    slug: "barcelona"
-  }
+    description:
+      "Architecture, beaches, warm weather and Mediterranean culture.",
+    slug: "barcelona",
+  },
 ];
 
 const destinationIcon = document.getElementById("destinationIcon");
 const destinationName = document.getElementById("destinationName");
-const destinationDescription = document.getElementById("destinationDescription");
+const destinationDescription = document.getElementById(
+  "destinationDescription",
+);
 
 const prevDestination = document.getElementById("prevDestination");
 const nextDestination = document.getElementById("nextDestination");

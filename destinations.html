@@ -1,98 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
-  <meta name="description" content="Search travel destinations using external data in the TravelMate web application.">
-  <meta name="keywords" content="travel destinations, Nominatim, Open-Meteo, Fetch API, JavaScript">
-  <meta name="author" content="Gabriele Rotundo">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Search travel destinations using external data in the TravelMate web application."
+    />
+    <meta
+      name="keywords"
+      content="travel destinations, Nominatim, Open-Meteo, Fetch API, JavaScript"
+    />
+    <meta name="author" content="Gabriele Rotundo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>TravelMate | Destinations</title>
+    <title>TravelMate | Destinations</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-  <script src="js/destinations.js" defer></script>
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/destinations.js" defer></script>
+  </head>
 
-<body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo.svg" alt="TravelMate logo" class="logo-img">
-        <span>TravelMate</span>
-      </a>
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo.svg"
+            alt="TravelMate logo"
+            class="logo-img"
+          />
+          <span>TravelMate</span>
+        </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-        ☰
-      </button>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
 
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="index.html#how-it-works">How it works</a>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="index.html#how-it-works">How it works</a>
 
-        <div class="auth-links" id="authLinks">
+          <div class="auth-links" id="authLinks"></div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="destinations-main">
-    <section class="page-header">
-      <p class="eyebrow">Explore the world</p>
-      <h1>Search destinations</h1>
-      <p>
-        Search for a city, country or destination, discover useful information and save it to your personal itinerary.
-      </p>
-    </section>
+    <main class="destinations-main">
+      <section class="page-header">
+        <p class="eyebrow">Explore the world</p>
+        <h1>Search destinations</h1>
+        <p>
+          Search for a city, country or destination, discover useful information
+          and save it to your personal itinerary.
+        </p>
+      </section>
 
-    <section class="search-panel">
-      <form id="destinationSearchForm" novalidate>
-        <div class="search-form-row">
-          <div class="form-group search-input-group">
-<label for="countrySearch">City, country or destination name</label>
-<input 
-  type="text" 
-  id="countrySearch" 
-  name="countrySearch" 
-  placeholder="Example: Italy, Rome, Tokyo, Vietnam"
->
-            <small class="error-message" id="countrySearchError"></small>
+      <section class="search-panel">
+        <form id="destinationSearchForm" novalidate>
+          <div class="search-form-row">
+            <div class="form-group search-input-group">
+              <label for="countrySearch"
+                >City, country or destination name</label
+              >
+              <input
+                type="text"
+                id="countrySearch"
+                name="countrySearch"
+                placeholder="Example: Italy, Rome, Tokyo, Vietnam"
+              />
+              <small class="error-message" id="countrySearchError"></small>
+            </div>
+
+            <button type="submit" class="btn primary-btn search-btn">
+              Search
+            </button>
           </div>
 
-          <button type="submit" class="btn primary-btn search-btn">
-            Search
-          </button>
+          <p class="form-message" id="searchMessage"></p>
+        </form>
+      </section>
+
+      <section class="results-section">
+        <div class="section-heading left-heading">
+          <p class="eyebrow">Results</p>
+          <h2>Destination information</h2>
         </div>
 
-        <p class="form-message" id="searchMessage"></p>
-      </form>
-    </section>
+        <p class="loading-message hidden" id="loadingMessage">
+          Loading destinations...
+        </p>
 
-    <section class="results-section">
-      <div class="section-heading left-heading">
-        <p class="eyebrow">Results</p>
-        <h2>Destination information</h2>
-      </div>
-
-      <p class="loading-message hidden" id="loadingMessage">
-        Loading destinations...
-      </p>
-
-      <div class="results-grid" id="resultsGrid">
-        <div class="empty-state">
-          <h3>No destination searched yet</h3>
-          <p>
-            Use the search form above to find information about a destination.
-          </p>
+        <div class="results-grid" id="resultsGrid">
+          <div class="empty-state">
+            <h3>No destination searched yet</h3>
+            <p>
+              Use the search form above to find information about a destination.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 TravelMate. Web development university project.</p>
-  </footer>
-</body>
+    <footer class="site-footer">
+      <p>&copy; 2026 TravelMate. Web development university project.</p>
+    </footer>
+  </body>
 </html>

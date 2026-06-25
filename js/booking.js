@@ -10,7 +10,9 @@ const travelBudgetInput = document.getElementById("travelBudget");
 const tripTypeSelect = document.getElementById("tripType");
 const specialRequestsInput = document.getElementById("specialRequests");
 
-const bookingDestinationError = document.getElementById("bookingDestinationError");
+const bookingDestinationError = document.getElementById(
+  "bookingDestinationError",
+);
 const travelerNameError = document.getElementById("travelerNameError");
 const travelersNumberError = document.getElementById("travelersNumberError");
 const durationDaysError = document.getElementById("durationDaysError");
@@ -29,7 +31,7 @@ const destinationSlugs = {
   rome: "Rome, Italy",
   paris: "Paris, France",
   tokyo: "Tokyo, Japan",
-  barcelona: "Barcelona, Spain"
+  barcelona: "Barcelona, Spain",
 };
 
 if (!bookingUser) {
@@ -99,7 +101,8 @@ function saveBooking() {
     travelerNameError.textContent = "Traveler name is required";
     isValid = false;
   } else if (travelerName.length < 2) {
-    travelerNameError.textContent = "Traveler name must be at least 2 characters";
+    travelerNameError.textContent =
+      "Traveler name must be at least 2 characters";
     isValid = false;
   }
 
@@ -144,7 +147,8 @@ function saveBooking() {
     specialRequestsError.textContent = "Special requests are required";
     isValid = false;
   } else if (specialRequests.length < 10) {
-    specialRequestsError.textContent = "Special requests must be at least 10 characters";
+    specialRequestsError.textContent =
+      "Special requests must be at least 10 characters";
     isValid = false;
   }
 
@@ -164,7 +168,7 @@ function saveBooking() {
     travelBudget: travelBudget,
     tripType: tripType,
     specialRequests: specialRequests,
-    createdAt: new Date().toLocaleString()
+    createdAt: new Date().toLocaleString(),
   };
 
   const bookings = getBookings();
@@ -185,7 +189,8 @@ function saveBooking() {
 }
 
 function updateBookingPreview() {
-  const destination = bookingDestinationInput.value.trim() || "Destination not selected";
+  const destination =
+    bookingDestinationInput.value.trim() || "Destination not selected";
   const travelerName = travelerNameInput.value.trim() || "Traveler not added";
   const travelersNumber = travelersNumberInput.value || "0";
   const durationDays = durationDaysInput.value || "0";
@@ -358,6 +363,6 @@ function formatDate(dateString) {
   return date.toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 }

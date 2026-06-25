@@ -38,12 +38,13 @@ if (loginForm) {
 
     const user = {
       username: username,
-      loginTime: new Date().toLocaleString()
+      loginTime: new Date().toLocaleString(),
     };
 
     localStorage.setItem("travelMateUser", JSON.stringify(user));
 
-    formMessage.textContent = "Login successful! Redirecting to the home page...";
+    formMessage.textContent =
+      "Login successful! Redirecting to the home page...";
     formMessage.classList.add("success");
 
     setTimeout(function () {
